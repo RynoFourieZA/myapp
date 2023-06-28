@@ -1,0 +1,43 @@
+#!/bin/bash
+
+echo ".git_aliases loaded"
+
+# Set git name and username
+Name="Ryno"
+Email="rjrfourie@outlook.com"
+
+git config --global user.name $Name
+git config --global user.email $Email
+git config --global color.ui auto
+
+#Display username and email
+alias gitName='git config --global user.name'
+alias gitEmail='git config --global user.email'
+
+echo "Git name is set to $Name and email is set to $Email"
+
+alias oneline='git log --oneline'
+
+# Create repository
+alias init='git init'
+
+# Synchronize changes
+alias fetch='git fetch'
+alias merge='git merge'
+alias push='git push'
+alias pull='git pull'
+alias add.='git add .'
+
+# Branches
+#alias newBranch='git branch branch-name'
+#alias checkoutBranch='git checkout branch-name'
+#alias deleteBranch='git merge branch-name'
+alias prevb="git checkout -"
+
+# Unstage file
+#git restore --staged <file>...
+
+# cherry pick
+alias pick="git cherry-pick "
+alias pickno="git cherry-pick -n "
+
