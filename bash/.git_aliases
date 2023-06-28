@@ -41,3 +41,9 @@ alias prevb="git checkout -"
 alias pick="git cherry-pick "
 alias pickno="git cherry-pick -n "
 
+
+# Commit messages
+alias msg="read -p 'Enter the commit message: ' commit_message"
+alias cm='git commit -m "$commit_message"'
+alias eco='echo "$commit_message"'
+
