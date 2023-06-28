@@ -29,9 +29,11 @@ alias pull='git pull'
 alias add.='git add .'
 
 # Branches
-#alias newBranch='git branch branch-name'
-#alias checkoutBranch='git checkout branch-name'
-#alias deleteBranch='git merge branch-name'
+alias bn="read -p 'Enter the branch name: ' branch_name"
+alias cm='git commit -m "$commit_message"'
+alias newgb='git branch "$branch_name"'
+#alias cb='git checkout "$branch_name"'
+#alias db='git merge "$branch_name"'
 alias prevb="git checkout -"
 
 # Unstage file
