@@ -16,6 +16,11 @@ alias gitEmail='git config --global user.email'
 
 echo "Git name is set to $Name and email is set to $Email"
 
+export GCM_CREDENTIAL_STORE=cache
+git config --global alias.credential-manager "credential-manager-core"
+alias gcmconfig='git-credential-manager configure'
+alias gtoken='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'
+
 alias oneline='git log --oneline'
 
 # Create repository
@@ -43,6 +48,10 @@ alias prevb="git checkout -"
 alias chash="read -p 'Enter the commit hash to cherry-pick: ' commit_hash"
 alias pick='git cherry-pick "$commit_hash"'
 alias pickno='git cherry-pick -n "$commit_hash"'
+
+# git Rebase
+alias chash="read -p 'How far back do you want to go: 'rebase"
+aliash rebaseHead='git rebase -i HEAD~"$rebase"'
 
 
 # Commit messages
