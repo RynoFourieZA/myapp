@@ -4,7 +4,7 @@ FROM ubuntu
 ENV WORK_PLACE=/home/comegetcred
 
 # Stop from blocking install of man pages 
-RUN sed -i 's,^path-exclude=/usr/share/man/,#path-exclude=/usr/share/man/,' /etc/dpkg/dpkg.cfg.d/excludes
+RUN yes| unminimize
 # Update package
 RUN apt-get update 
 
