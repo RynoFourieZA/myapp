@@ -3,19 +3,22 @@ FROM ubuntu
 
 ENV WORK_PLACE=/home/comegetcred
 
-# Update and install package
-RUN apt-get update && \
-    apt-get install --only-upgrade bash && \
-    apt-get install -y nodejs && \
-    apt-get install -y npm && \
-    apt-get install -y git && \
-    apt-get install -y dos2unix && \
-    apt-get install -y nano
-
+# Stop from blocking install of man pages 
 RUN sed -i 's,^path-exclude=/usr/share/man/,#path-exclude=/usr/share/man/,' /etc/dpkg/dpkg.cfg.d/excludes
+# Update package
+RUN apt-get update 
 
-RUN apt-get install -y man && \
-    apt-get install -y manpages-posix
+# Install package
+RUN apt-get install -y man 
+RUN apt-get install -y manpages-posix
+RUN apt-get install --only-upgrade bash 
+RUN apt-get install -y nodejs 
+RUN apt-get install -y git
+RUN apt-get install -y dos2unix
+RUN apt-get install -y nano
+RUN apt-get install -y npm 
+
+
 
 # Copy the necessary files
 COPY bash/ /root/
@@ -25,8 +28,6 @@ WORKDIR /home/
 RUN dos2unix /root/.bashrc /root/.bash_profile /root/.bash_aliases /root/.git_aliases
 
 RUN git clone https://github.com/RynoFourieZA/comegetcred.git
-
-RUN git config --global alias.credential-manager "credential-manager-core"
 
 #Work Directory
 WORKDIR $WORK_PLACE

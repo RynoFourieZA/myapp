@@ -17,10 +17,8 @@ alias gitEmail='git config --global user.email'
 echo "Git name is set to $Name and email is set to $Email"
 
 export GCM_CREDENTIAL_STORE=cache
-git config --global alias.credential-manager "credential-manager-core"
+alias ggc='git config --global alias.credential-manager "credential-manager-core"'
 alias gcmconfig='git-credential-manager configure'
-alias gtoken='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'
-
 alias oneline='git log --oneline'
 
 # Create repository
