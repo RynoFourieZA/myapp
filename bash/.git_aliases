@@ -40,12 +40,15 @@ alias prevb="git checkout -"
 #git restore --staged <file>...
 
 # cherry pick
-alias pick="git cherry-pick "
-alias pickno="git cherry-pick -n "
+alias chash="read -p 'Enter the commit hash to cherry-pick: ' commit_hash"
+alias pick='git cherry-pick "$commit_hash"'
+alias pickno='git cherry-pick -n "$commit_hash"'
 
 
 # Commit messages
 alias msg="read -p 'Enter the commit message: ' commit_message"
 alias cm='git commit -m "$commit_message"'
 alias eco='echo "$commit_message"'
+
+alias dlc="git reset --hard HEAD~1"
 
